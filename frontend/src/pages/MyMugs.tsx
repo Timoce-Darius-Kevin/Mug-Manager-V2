@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { useMugs, useCreateMug, useUpdateMug, useDeleteMug } from '../api'
-import type { Mug } from '../api'
+import { useMugs, useCreateMug, useUpdateMug, useDeleteMug } from '../hooks/mug'
+import type { Mug } from '../model/mug'
 
 export default function MyMugs() {
   const { data, isLoading, error } = useMugs()

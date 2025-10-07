@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { useAdminUsers, useAdminUserMugs } from '../api'
-import type { Mug } from '../api'
+import { useAdminUsers, useAdminUserMugs } from '../hooks/admin'
+import type { Mug } from '../model/mug'
 
 export default function AdminPage() {
   const { data: users, isLoading, error } = useAdminUsers()
