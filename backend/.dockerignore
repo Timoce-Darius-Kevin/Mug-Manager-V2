@@ -1,0 +1,4 @@
+# Ignore Maven target dir and local files
+/target
+**/.DS_Store
+*.log

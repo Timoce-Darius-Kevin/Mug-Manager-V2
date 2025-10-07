@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: mug-backend
+    ports:
+      - "8080:8080"
+    environment:
+      # Set these in your shell or a .env file next to this compose file
+      AUTH0_ISSUER_URI: ${AUTH0_ISSUER_URI}
+      AUTH0_AUDIENCE: ${AUTH0_AUDIENCE}
+      AUTH0_ROLES_CLAIM: ${AUTH0_ROLES_CLAIM}
+    # Uncomment to see SQL in logs
+    # environment:
+    #   spring_jpa_show_sql: "true"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: mug-frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend

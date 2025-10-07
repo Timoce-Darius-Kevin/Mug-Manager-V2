@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --color-mint-300: #B5FFD9;
+  --color-mint-400: #98FFCC;
+  --color-mint-500: #7DFFC0;
+  --color-mint-600: #5CE0A9;
+}
+
+/* Base layout styling: blue→red gradient background and mint accents */
+@layer base {
+  html, body, #root {
+    height: 100%;
+  }
+  body {
+    @apply m-0 min-h-screen bg-gradient-to-br from-blue-600 via-indigo-600 to-red-600 text-white;
+    font-synthesis: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  a {
+    @apply text-mint-300 hover:text-mint-500 font-medium;
+  }
+}
