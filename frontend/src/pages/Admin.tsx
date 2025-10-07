@@ -14,13 +14,13 @@ export default function AdminPage() {
     <div className="space-y-6">
       <h2 className="text-2xl font-semibold">Admin: Users</h2>
       <ul className="space-y-2">
-        {(users || []).map((u) => (
-          <li key={u.sub}>
+        {(users || []).map((user) => (
+          <li key={user.sub}>
             <button
               className="px-3 py-2 rounded-md bg-white/10 hover:bg-white/20 border border-white/20"
-              onClick={() => setSelectedUser(u.sub)}
+              onClick={() => setSelectedUser(user.sub)}
             >
-              {u.sub} <span className="text-white/70">({u.mugsCount})</span>
+              {user.sub} <span className="text-white/70">({user.mugsCount})</span>
             </button>
           </li>
         ))}
@@ -30,10 +30,10 @@ export default function AdminPage() {
         <div>
           <h3 className="text-xl font-semibold">Mugs for {selectedUser}</h3>
           <ul className="space-y-2">
-            {(mugs || []).map((m: Mug) => (
-              <li key={m.id} className="p-3 rounded-md bg-white/5 border border-white/10">
-                <div className="font-medium">{m.name}</div>
-                <div className="text-sm text-white/70">{m.description}</div>
+            {(mugs || []).map((mug: Mug) => (
+              <li key={mug.id} className="p-3 rounded-md bg-white/5 border border-white/10">
+                <div className="font-medium">{mug.name}</div>
+                <div className="text-sm text-white/70">{mug.description}</div>
               </li>
             ))}
           </ul>
